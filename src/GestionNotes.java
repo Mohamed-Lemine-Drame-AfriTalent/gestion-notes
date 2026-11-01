@@ -4,7 +4,7 @@ public class GestionNotes {
 
 //        Pour les Constantes du poids
         final double POIDS_DEVOIR = 0.4;
-        final double POIDS_EXAME = 0.6;
+        final double POIDS_EXAMEN = 0.6;
 
 //        Pour les Constantes de l'exam'
         final int COEF_ALGORITHMIQUE = 3;
@@ -29,6 +29,36 @@ public class GestionNotes {
         System.out.print(" Saisir votre Matricule : ");
         scanner.nextLine();
         String Matricule = scanner.nextLine();
+
+//        Saisir les notes
+
+        System.out.print(" Algorithmique, note de devoir : ");
+        double devoirAlgo = scanner.nextDouble();
+
+        System.out.print(" Algorithmique, note d'examen: ");
+        double examenAlgo = scanner.nextDouble();
+
+        System.out.print(" Base de données, note de devoir : ");
+        double devoirBd = scanner.nextDouble();
+
+        System.out.print(" Base de données, note d'examen : ");
+        double examenBd = scanner.nextDouble();
+
+        System.out.print(" Anglais, note de devoir : ");
+        double devoirAnglais = scanner.nextDouble();
+
+        System.out.print(" Anglais, note d'examen : ");
+        double examenAnglais = scanner.nextDouble();
+
+//        Calcul des moyennes
+
+        double moyenneAlgo = devoirAlgo * POIDS_DEVOIR + examenAlgo * POIDS_EXAMEN;
+
+        double moyenneBd = devoirBd * POIDS_DEVOIR + examenBd * POIDS_EXAMEN;
+
+        double moyenneAnglais = devoirAnglais * POIDS_DEVOIR + examenAnglais * POIDS_EXAMEN;
+
+        System.out.println("Brut : " + moyenneAlgo + " | " + moyenneBd + " | " + moyenneAnglais );
 
         scanner.close();
     }
