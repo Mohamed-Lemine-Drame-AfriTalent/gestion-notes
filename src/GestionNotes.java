@@ -21,16 +21,16 @@ public class GestionNotes {
         System.out.println("  RELEVÉ DE NOTES - L2");
         System.out.println("==============================");
 
-        System.out.print(" Saisir votre Prénom : ");
+        System.out.print(" Prénom : ");
         String Prenom = scanner.nextLine();
 
-        System.out.print(" Saisir votre Nom : ");
+        System.out.print(" Nom : ");
         String Nom = scanner.nextLine();
 
-        System.out.print(" Saisir votre Age : ");
+        System.out.print(" Age : ");
         int Age = scanner.nextInt();
 
-        System.out.print(" Saisir votre Matricule : ");
+        System.out.print(" Matricule : ");
         scanner.nextLine();
         String Matricule = scanner.nextLine();
 
@@ -39,7 +39,7 @@ public class GestionNotes {
         System.out.print(" Algorithmique, note de devoir : ");
         double devoirAlgo = scanner.nextDouble();
 
-        System.out.print(" Algorithmique, note d'examen: ");
+        System.out.print(" Algorithmique, note d'examen : ");
         double examenAlgo = scanner.nextDouble();
 
         System.out.print(" Base de données, note de devoir : ");
@@ -54,6 +54,13 @@ public class GestionNotes {
         System.out.print(" Anglais, note d'examen : ");
         double examenAnglais = scanner.nextDouble();
 
+        System.out.println();
+
+        System.out.println(" Etudiant : " + Prenom + " " + Nom + " (" + Age + " ans)");
+        System.out.println(" Matricule : " + Matricule);
+
+        System.out.println("------------------------------");
+
 //        Calcul des moyennes
 
         double moyenneAlgo = devoirAlgo * POIDS_DEVOIR + examenAlgo * POIDS_EXAMEN;
@@ -62,11 +69,20 @@ public class GestionNotes {
 
         double moyenneAnglais = devoirAnglais * POIDS_DEVOIR + examenAnglais * POIDS_EXAMEN;
 
-        double moyenneGeneral = (moyenneAlgo * COEF_ALGORITHMIQUE + moyenneBd * COEF_BASE_DE_DONNEES
+        double moyenneGenerale = (moyenneAlgo * COEF_ALGORITHMIQUE + moyenneBd * COEF_BASE_DE_DONNEES
                 + moyenneAnglais * COEF_ANGLAIS ) / sommeCoefs;
 
-        System.out.println("Brut : " + moyenneAlgo + " | " + moyenneBd + " | " + moyenneAnglais +
-                " | Moyenne General : " + moyenneGeneral);
+        System.out.printf("Algorithmique (coef %d)   : %.2f%n", COEF_ALGORITHMIQUE, moyenneAlgo);
+
+        System.out.printf("Base de données (coef %d) : %.2f%n", COEF_BASE_DE_DONNEES, moyenneBd);
+
+        System.out.printf("Anglais (coef %d)         : %.2f%n", COEF_ANGLAIS, moyenneAnglais);
+
+        System.out.println("------------------------------");
+
+        System.out.printf("Moyenne générale : %.2f%n", moyenneGenerale);
+
+
 
         scanner.close();
     }
