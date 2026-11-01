@@ -11,6 +11,10 @@ public class GestionNotes {
         final int COEF_BASE_DE_DONNEES = 2;
         final int COEF_ANGLAIS = 1;
 
+//        calcul des coeff
+
+        int sommeCoefs = COEF_ALGORITHMIQUE + COEF_BASE_DE_DONNEES + COEF_ANGLAIS;
+
         Scanner scanner = new Scanner(System.in);
 
         System.out.println("==============================");
@@ -58,7 +62,11 @@ public class GestionNotes {
 
         double moyenneAnglais = devoirAnglais * POIDS_DEVOIR + examenAnglais * POIDS_EXAMEN;
 
-        System.out.println("Brut : " + moyenneAlgo + " | " + moyenneBd + " | " + moyenneAnglais );
+        double moyenneGeneral = (moyenneAlgo * COEF_ALGORITHMIQUE + moyenneBd * COEF_BASE_DE_DONNEES
+                + moyenneAnglais * COEF_ANGLAIS ) / sommeCoefs;
+
+        System.out.println("Brut : " + moyenneAlgo + " | " + moyenneBd + " | " + moyenneAnglais +
+                " | Moyenne General : " + moyenneGeneral);
 
         scanner.close();
     }
