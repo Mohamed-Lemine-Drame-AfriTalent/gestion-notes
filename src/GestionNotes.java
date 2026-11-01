@@ -80,7 +80,7 @@ public class GestionNotes {
 
         System.out.println("------------------------------");
 
-        System.out.printf("Moyenne générale : %.2f%n", moyenneGenerale);
+        System.out.printf("Moyenne générale : %.2f / 20%n", moyenneGenerale);
 
 
 
