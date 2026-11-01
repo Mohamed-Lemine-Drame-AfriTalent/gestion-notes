@@ -1,6 +1,16 @@
 import java.util.Scanner;
 public class GestionNotes {
     public static void main(String[] args) {
+
+//        Pour les Constantes du poids
+        final double POIDS_DEVOIR = 0.4;
+        final double POIDS_EXAME = 0.6;
+
+//        Pour les Constantes de l'exam'
+        final int COEF_ALGORITHMIQUE = 3;
+        final int COEF_BASE_DE_DONNEES = 2;
+        final int COEF_ANGLAIS = 1;
+
         Scanner scanner = new Scanner(System.in);
 
         System.out.println("==============================");
