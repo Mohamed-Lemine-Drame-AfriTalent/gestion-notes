@@ -1,6 +1,9 @@
 import java.util.Scanner;
+
 public class GestionNotes {
     public static void main(String[] args) {
+
+        // CONSTANTES
 
 //        Pour les Constantes du poids
         final double POIDS_DEVOIR = 0.4;
@@ -21,18 +24,24 @@ public class GestionNotes {
         System.out.println("  RELEVÉ DE NOTES - L2");
         System.out.println("==============================");
 
+        // SAISIT DE L'IDENTITE
+
+//        Saisir les identités
+
         System.out.print(" Prénom : ");
-        String Prenom = scanner.nextLine();
+        String prenom = scanner.nextLine();
 
         System.out.print(" Nom : ");
-        String Nom = scanner.nextLine();
+        String nom = scanner.nextLine();
 
-        System.out.print(" Age : ");
-        int Age = scanner.nextInt();
+        System.out.print(" Âge : ");
+        int age = scanner.nextInt();
 
         System.out.print(" Matricule : ");
         scanner.nextLine();
-        String Matricule = scanner.nextLine();
+        String matricule = scanner.nextLine();
+
+        // SAISIT DES NOTES
 
 //        Saisir les notes
 
@@ -56,10 +65,8 @@ public class GestionNotes {
 
         System.out.println();
 
-        System.out.println(" Etudiant : " + Prenom + " " + Nom + " (" + Age + " ans)");
-        System.out.println(" Matricule : " + Matricule);
 
-        System.out.println("------------------------------");
+        // CALCULS
 
 //        Calcul des moyennes
 
@@ -70,7 +77,16 @@ public class GestionNotes {
         double moyenneAnglais = devoirAnglais * POIDS_DEVOIR + examenAnglais * POIDS_EXAMEN;
 
         double moyenneGenerale = (moyenneAlgo * COEF_ALGORITHMIQUE + moyenneBd * COEF_BASE_DE_DONNEES
-                + moyenneAnglais * COEF_ANGLAIS ) / sommeCoefs;
+                + moyenneAnglais * COEF_ANGLAIS) / sommeCoefs;
+
+        // AFFICHAGE
+
+//        Affichages des informations
+
+        System.out.println(" Étudiant : " + prenom + " " + nom + " (" + age + " ans)");
+        System.out.println(" Matricule : " + matricule);
+
+        System.out.println("------------------------------");
 
         System.out.printf("Algorithmique (coef %d)   : %.2f%n", COEF_ALGORITHMIQUE, moyenneAlgo);
 
@@ -81,7 +97,6 @@ public class GestionNotes {
         System.out.println("------------------------------");
 
         System.out.printf("Moyenne générale : %.2f / 20%n", moyenneGenerale);
-
 
 
         scanner.close();
