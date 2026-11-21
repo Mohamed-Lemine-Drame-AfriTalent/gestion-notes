@@ -34,11 +34,8 @@ public class GestionNotes {
         System.out.print(" Nom : ");
         String nom = scanner.nextLine();
 
-        System.out.print(" Âge : ");
-        int age = scanner.nextInt();
 
         System.out.print(" Matricule : ");
-        scanner.nextLine();
         String matricule = scanner.nextLine();
 
         // SAISIT DES NOTES
@@ -83,7 +80,7 @@ public class GestionNotes {
 
 //        Affichages des informations
 
-        System.out.println(" Étudiant : " + prenom + " " + nom + " (" + age + " ans)");
+        System.out.println(" Étudiant : " + prenom + " " + nom + " ");
         System.out.println(" Matricule : " + matricule);
 
         System.out.println("------------------------------");
